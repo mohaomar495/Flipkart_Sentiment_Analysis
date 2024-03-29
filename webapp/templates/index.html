@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Sentiment Analysis</title>
+    <style>
+        /* Custom CSS for home.html */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://st3.depositphotos.com/4763221/31889/i/450/depositphotos_318894360-stock-photo-tula-24-09-2019-flipkart.jpg'); /* Background image related to Flipkart */
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for readability */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+        }
+
+        h1 {
+            color: #333; /* Dark gray text color */
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            resize: both; /* Allow the textarea to be resized by the user */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Text for Flipkart Sentiment Analysis:</h1>
+        <form action="/" method="post">
+            <textarea id="clear_text" name="clear_text" placeholder="Enter text here..." rows="5" required></textarea> <!-- Resizable textarea -->
+            <input type="submit" value="Predict">
+        </form>
+        {% if pred %}
+        <div class="result">
+            <p>Sentiment: {{ pred }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
